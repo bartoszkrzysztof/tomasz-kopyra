@@ -1,0 +1,49 @@
+@use '../variables' as vars;
+
+.headline {
+    @apply flex justify-center
+    my-8;
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-medium text-xl md:text-2xl
+        text-white bg-primary 
+        w-auto md:min-w-[720px] inline-block
+        p-4 ml-auto mr-auto rounded-xl;
+
+        &.has-heading-tone-primary {
+            @apply bg-accent text-white;
+        }
+        a {
+            text-decoration: none!important;
+        }
+        &.has-heading-tone-muted {
+            @apply bg-transparent text-accent p-0 text-xl md:text-3xl;
+        }
+    }
+}
+
+.wysiwyg {
+    > p {
+        @apply md:max-w-3/4 md:mx-auto mb-3;
+    }
+    > ul, > ol {
+        @apply md:max-w-3/4 md:mx-auto mb-6 pl-6;
+        li {
+            @apply mb-2;
+        }
+    }
+    ul, ol {
+        ul, ol {
+            @apply ml-6;
+        }
+    }
+
+    ol {
+        @apply list-decimal;
+    }
+    ul {
+        @apply list-disc;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold text-xl mt-8 mb-4 md:max-w-3/4 md:mx-auto;
+    }
+}

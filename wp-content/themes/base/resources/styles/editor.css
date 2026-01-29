@@ -1,0 +1,13 @@
+@import "tailwindcss/index.css";
+
+@source "../views/**/*.blade.php";
+@source "../../app/**/*.php";
+
+.wp-block-columns {
+    border: #adb2ad solid 1px;
+    padding: 1rem;
+    gap: 1rem;
+}
+.wp-block-columns .wp-block-column {
+    border: #eaecf0 solid 1px;
+}

@@ -1,0 +1,64 @@
+@use '../variables' as vars;
+
+body {
+    @apply text-base text-emphasis font-primary;
+
+    &.increased-text-0 {
+        @apply text-sm;
+    }
+    &.increased-text-2 {   
+        @apply text-lg;
+    }
+    &.increased-text-3 {
+        @apply text-xl;
+    }
+    &.increased-text-4 {
+        @apply text-2xl;
+    }
+    &.wcag-high-contrast {
+        @apply !text-white !bg-black;
+        .bg-white {
+            @apply !bg-black;
+        }
+        .bg-primary, .bg-accent {
+            @apply !bg-white !text-black;
+        }
+        .headline {
+            h1, h2, h3, h4, h5, h6 {
+                @apply !bg-black !text-white;
+            }
+        }
+        .text-text {
+            @apply !text-white;
+        }
+        .text-light {
+            @apply !text-white;
+        }
+        .header-nav, .footer-nav, .wcag-nav {
+            a {
+                @apply !text-white;
+            }
+        }
+        .contrast-hide {
+            @apply !hidden;
+        }
+        .contrast-show {
+            @apply !block;
+        }
+        .eu-banner {
+            @apply bg-white;
+        }
+    }
+    .contrast-show {
+        @apply !hidden;
+    }
+}
+.container {
+    @apply mx-auto 
+    max-w-full 
+    sm:max-w-[var(--container-sm)] 
+    md:max-w-[var(--container-md)] 
+    lg:max-w-[var(--container-lg)] 
+    xl:max-w-[var(--container-xl)]
+    px-4 md:px-0;
+}
