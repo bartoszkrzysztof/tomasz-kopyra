@@ -47,3 +47,5 @@ Application::configure()
         App\Providers\BlockServiceProvider::class,
     ])
     ->boot();
+
+require_once __DIR__ . '/inc/inc-bootstrap.php';

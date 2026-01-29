@@ -15,6 +15,56 @@
  */
 
 return [
-    'cpt' => [],
-    'taxonomies' => [],
+    'cpt' => [
+        'paint' => [
+            'args' => [
+                'label' => 'Obrazy',
+                'labels' => [
+                    'name' => 'Obrazy',
+                    'singular_name' => 'Obraz',
+                    'menu_name' => 'Obrazy',
+                    'add_new' => 'Dodaj nowy',
+                    'add_new_item' => 'Dodaj nowy obraz',
+                    'edit_item' => 'Edytuj obraz',
+                    'new_item' => 'Nowy obraz',
+                    'view_item' => 'Zobacz obraz',
+                    'search_items' => 'Szukaj obrazów',
+                    'not_found' => 'Nie znaleziono obrazów',
+                    'not_found_in_trash' => 'Nie znaleziono obrazów w koszu',
+                ],
+                'public' => true,
+                'has_archive' => true,
+                'show_in_rest' => true,
+                'supports' => ['title', 'editor', 'thumbnail'],
+                'hierarchical' => false,
+                'rewrite' => ['slug' => 'obraz'],
+                'menu_icon' => 'dashicons-format-image',
+                'menu_position' => 5,
+            ],
+        ],
+    ],
+    'taxonomies' => [
+        'paint-category' => [
+            'object_type' => ['paint'],
+            'args' => [
+                'label' => 'Kategorie obrazów',
+                'labels' => [
+                    'name' => 'Kategorie obrazów',
+                    'singular_name' => 'Kategoria obrazu',
+                    'menu_name' => 'Kategorie',
+                    'all_items' => 'Wszystkie kategorie',
+                    'edit_item' => 'Edytuj kategorię',
+                    'view_item' => 'Zobacz kategorię',
+                    'update_item' => 'Aktualizuj kategorię',
+                    'add_new_item' => 'Dodaj nową kategorię',
+                    'new_item_name' => 'Nazwa nowej kategorii',
+                    'search_items' => 'Szukaj kategorii',
+                ],
+                'hierarchical' => true,
+                'show_in_rest' => true,
+                'rewrite' => ['slug' => 'kategorie-obrazu'],
+                'show_admin_column' => true,
+            ],
+        ],
+    ],
 ];

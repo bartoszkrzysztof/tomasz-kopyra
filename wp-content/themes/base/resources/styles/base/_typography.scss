@@ -1,0 +1,77 @@
+/* Typography styles using ABEM methodology and Tailwind @apply */
+@use './root' as *;
+
+/* Base typography settings */
+body {
+    @apply text-text-main bg-bg-main;
+}
+.h1 {
+    @apply 
+    text-[32px] 
+    md:text-[48px] 
+    xl:text-[58px] 
+    2xl:text-[64px];   
+}
+.h2 {
+    @apply 
+    text-[32px] 
+    md:text-[48px] 
+    xl:text-[58px] 
+    2xl:text-[64px];   
+}
+.h3 {
+    @apply 
+    text-[24px] 
+    md:text-[28px] 
+    xl:text-[32px] 
+    2xl:text-[36px];   
+}
+.h4 {
+    @apply 
+    text-[20px] 
+    md:text-[24px] 
+    xl:text-[28px] 
+    2xl:text-[32px];   
+}
+.h5 {
+    @apply 
+    text-[16px] 
+    md:text-[18px] 
+    xl:text-[20px] 
+    2xl:text-[24px];   
+}
+.h6 {
+    @apply 
+    text-[14px] 
+    md:text-[16px] 
+    xl:text-[18px] 
+    2xl:text-[20px];   
+}
+p {
+    @apply 
+    text-[14px] 
+    md:text-[14px] 
+    xl:text-[16px] 
+    2xl:text-[16px];   
+    &--bigger {
+        @apply 
+        text-[16px] 
+        md:text-[16px] 
+        xl:text-[18px] 
+        2xl:text-[18px];   
+    }
+    &--smaller {
+        @apply 
+        text-[12px] 
+        md:text-[12px] 
+        xl:text-[14px] 
+        2xl:text-[14px];   
+    }
+}
+ul, li {
+    @apply 
+    text-[14px] 
+    md:text-[14px] 
+    xl:text-[16px] 
+    2xl:text-[16px];   
+}

@@ -1,31 +1,21 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
-@import "./_variables.scss";  /* Definicje zmiennych NAJPIERW */
-@import "./main.scss";         /* Potem komponenty */
+@import "./base/_root.scss";
+@import "./main.scss";
 @source "../views/**/*.blade.php";
 @source "../../app/**/*.php";
 
 @theme {
-    --color-primary: var(--color-primary);
     --color-accent: var(--color-accent);
-    --color-text: var(--color-text);
-    --color-emphasis: var(--color-text-emphasis);
-    --color-light: var(--color-text-light);
-    --color-border: var(--color-border);
-
-    --text-lg: 1.125rem;
-    --text-xl: 1.25rem;
-    --text-2xl: 1.75rem;
-    --text-3xl: 2.1875rem;
-    
-    --typography-prose-p-margin-top: 0;
-    --typography-prose-h1-margin-top: 0;
-    --typography-prose-h2-margin-top: 0;
-    --typography-prose-h3-margin-top: 0;
-    --typography-prose-h4-margin-top: 0;
-    --typography-prose-ul-margin-top: 0;
-    --typography-prose-ol-margin-top: 0;
+    --color-bg-main: var(--color-bg-main);
+    --color-text-main: var(--color-text-main);
+    --color-text-second: var(--color-text-second);
+    --color-text-third: var(--color-text-third);
 }
+
 @utility font-primary {
     font-family: var(--font-primary);
+}
+
+@utility font-secondary {
+    font-family: var(--font-secondary);
 }
