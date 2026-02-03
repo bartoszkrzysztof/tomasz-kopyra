@@ -3,9 +3,11 @@ import.meta.glob([
   '../fonts/**',
 ]);
 import navToggler from './components/nav-toggler.js';
+import floatLabel from './components/float-label.js';
 import { initScrollAnimations } from './components/animations/scroll-animations.js';
 
 navToggler();
+floatLabel('.cf-form .cf-field-text, .cf-form .cf-field-textarea, .cf-form .cf-field-email, .cf-form .cf-field-number, .cf-form .cf-field-tel');
 
 /**
  * Initialize Lucide Icons

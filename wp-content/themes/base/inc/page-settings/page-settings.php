@@ -1,0 +1,21 @@
+<?php
+
+// Dodaj stronę opcji ACF
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+        'page_title'    => 'Ustawienia motywu',
+        'menu_title'    => 'Ustawienia motywu',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+    // Dodaj podstronę stopka
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Ustawienia stopki',
+        'menu_title'    => 'Stopka',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+    
+}

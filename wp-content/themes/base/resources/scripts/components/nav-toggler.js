@@ -60,4 +60,12 @@ export default function navToggler() {
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         }, false);
     }
+
+    function updateNavPosition() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > scrollThreshold) {
+            nav.classList.add('is-scrolled');
+        }
+    }
+    updateNavPosition();
 }

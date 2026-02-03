@@ -1,4 +1,12 @@
 body {
 }
 .container {
+    @apply 
+    px-4
+    sm:px-8
+    max-w-full mx-auto
+    sm:max-w-[720px] mx-auto
+    md:max-w-[920px] mx-auto
+    lg:max-w-[1210px] mx-auto
+    2xl:max-w-[1440px] mx-auto;
 }

@@ -1,0 +1,77 @@
+/**
+ * Style dla panelu administracyjnego
+ * Contact Form Module
+ */
+
+/* ====================================
+   ACF Repeater - lepsze rozdzielenie elementów
+   ==================================== */
+#acf-group_cf_form_fields .acf-table .acf-row > td {
+    border-top: 1px solid #2271b1!important;
+    border-bottom: 3px solid #2271b1;
+}
+#acf-group_cf_form_fields .acf-table .acf-row > td:first-of-type {
+    border-left: 1px solid #2271b1;
+}
+#acf-group_cf_form_fields .acf-table .acf-row > td:last-of-type {
+    border-right: 1px solid #2271b1;
+}
+
+/* ====================================
+   Dodatkowe style dla metaboksów CF
+   ==================================== */
+
+/* Sekcja info o źródle pól */
+.cf-source-info {
+    background: #f0f6fc !important;
+    border-left-color: #0073aa !important;
+}
+
+/* Przykłady kodu */
+#cf-field-example,
+#cf-view-example {
+    background: #f6f7f7 !important;
+    border: 1px solid #c3c4c7 !important;
+}
+
+/* Tabela z podglądem pól */
+.cf-field-wrapper table.widefat {
+    margin-top: 15px !important;
+}
+
+.cf-field-wrapper table.widefat th {
+    background: #f6f7f7 !important;
+}
+
+/* Description text */
+.cf-field-wrapper .description {
+    color: #646970 !important;
+    font-style: italic !important;
+}
+
+/* Opcje formularza w metaboxie widoku HTML */
+.cf-form-view-wrapper h4 {
+    margin-top: 20px !important;
+    margin-bottom: 15px !important;
+    padding-top: 15px !important;
+    border-top: 1px solid #dcdcde !important;
+}
+
+.cf-form-view-wrapper input[type="text"] {
+    padding: 8px 12px !important;
+}
+
+/* Style dla checkboxa reCAPTCHA */
+#cf_enable_recaptcha {
+    margin-right: 8px !important;
+}
+
+/* Ostrzeżenie o braku konfiguracji reCAPTCHA */
+.cf-form-view-wrapper .description[style*="color: #d63638"] {
+    background: #fcf0f1 !important;
+    padding: 8px 12px !important;
+    border-left: 3px solid #d63638 !important;
+    border-radius: 3px !important;
+    margin-top: 8px !important;
+    display: inline-block !important;
+}

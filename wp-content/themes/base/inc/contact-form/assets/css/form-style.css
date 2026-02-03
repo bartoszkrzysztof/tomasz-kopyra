@@ -1,0 +1,322 @@
+/**
+ * Style dla formularzy kontaktowych
+ * 
+ * @package ContactForm
+ */
+
+:root {
+    --form-color-accent: #B50027;
+    --form-color-bg-main: #FFFFFF;
+    --form-color-text-main: #333333;
+    --form-color-text-second: #888888;
+    --form-color-text-third: #AAAAAA;
+    --form-color-border: #5D5D5D;
+    --form-color-success: #28a745;
+    --form-color-success-bg: #d4edda;
+    --form-color-success-border: #c3e6cb;
+    --form-color-error: #dc3545;
+    --form-color-error-bg: #f8d7da;
+    --form-color-error-border: #f5c6cb;
+
+    --form-color-button-bg: #B50027;
+    --form-color-button-bg-hover: #8B001D;
+    --form-color-button-text: #ffffff;
+    --form-color-button-disabled-bg: #6c757d;
+}
+
+/* Wrapper formularza */
+.cf-form-wrapper {
+    /* max-width: 600px;
+    margin: 0 auto; */
+    position: relative;
+}
+
+/* Formularz */
+.cf-form {
+    /* padding: 20px; */
+    position: relative;
+}
+
+/* Komunikaty */
+.cf-form-messages {
+    margin-bottom: 20px;
+}
+
+.cf-message {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.cf-message-success {
+    background-color: var(--form-color-success-bg);
+    border: 1px solid var(--form-color-success-border);
+    color: var(--form-color-success);
+}
+
+.cf-message-error {
+    background-color: var(--form-color-error-bg);
+    border: 1px solid var(--form-color-error-border);
+    color: var(--form-color-error);
+}
+
+/* Pola formularza */
+.cf-field-wrapper {
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.cf-field-wrapper.-textarea {
+    padding-top: 0;
+    margin-top: 10px;
+}
+
+.cf-field-wrapper label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--form-color-text-second);
+    font-size: 14px;
+}
+
+.cf-field-wrapper label .required {
+    color: var(--form-color-error);
+}
+
+.cf-field-wrapper input[type="text"],
+.cf-field-wrapper input[type="email"],
+.cf-field-wrapper input[type="tel"],
+.cf-field-wrapper input[type="url"],
+.cf-field-wrapper input[type="number"],
+.cf-field-wrapper input[type="date"],
+.cf-field-wrapper textarea,
+.cf-field-wrapper select {
+    width: 100%;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 1px solid var(--form-color-border);
+    border-radius: 0;
+    transition: border-color 0.3s ease;
+}
+
+
+.cf-field-wrapper textarea {
+    padding: 30px 12px 10px 12px;
+    border: 1px solid var(--form-color-border);
+}
+
+.cf-field-wrapper input[type="text"]:focus,
+.cf-field-wrapper input[type="email"]:focus,
+.cf-field-wrapper input[type="tel"]:focus,
+.cf-field-wrapper input[type="url"]:focus,
+.cf-field-wrapper input[type="number"]:focus,
+.cf-field-wrapper input[type="date"]:focus,
+.cf-field-wrapper textarea:focus,
+.cf-field-wrapper select:focus {
+    outline: none;
+    border-bottom-color: var(--form-color-accent);
+    /* border-color: #007bff; */
+}
+
+.cf-field-wrapper input[type="text"]:focus label,
+.cf-field-wrapper input[type="email"]:focus label,
+.cf-field-wrapper input[type="tel"]:focus label,
+.cf-field-wrapper input[type="url"]:focus label,
+.cf-field-wrapper input[type="number"]:focus label,
+.cf-field-wrapper input[type="date"]:focus label,
+.cf-field-wrapper textarea:focus label,
+.cf-field-wrapper select:focus label {
+    color: var(--form-color-accent);
+}
+
+/* Pole z błędem */
+.cf-field-invalid {
+    border-color: var(--form-color-error) !important;
+    border-bottom-color: var(--form-color-error) !important;
+}
+
+.cf-field-error {
+    display: block;
+    margin-top: 5px;
+    color: var(--form-color-error);
+    font-size: 13px;
+}
+
+/* Textarea */
+.cf-field-wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Checkbox i radio */
+.cf-field-wrapper input[type="checkbox"],
+.cf-field-wrapper input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Przycisk wysyłki */
+.cf-submit-wrapper {
+    margin-top: 25px;
+}
+
+.cf-submit-button {
+    background-color: var(--form-color-button-bg);
+    color: var(--form-color-button-text);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cf-submit-button:hover {
+    background-color: var(--form-color-button-bg-hover);
+}
+
+.cf-submit-button:disabled {
+    background-color: var(--form-color-button-disabled-bg);
+    cursor: not-allowed;
+}
+
+.cf-submit-button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.cf-submit-button.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid var(--form-color-bg-main);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: cf-spinner 0.6s linear infinite;
+}
+
+@keyframes cf-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Notatka informacyjna */
+.cf-notice {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .cf-form {
+        padding: 15px;
+    }
+
+    .cf-submit-button {
+        width: 100%;
+    }
+}
+
+/* Style dla plików */
+.cf-field-wrapper input[type="file"] {
+    padding: 5px;
+}
+
+/* Style dla select */
+.cf-field-wrapper select {
+    cursor: pointer;
+    background-color: var(--form-color-bg-main);
+}
+
+/* Pomocnicze klasy */
+.cf-field-inline {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.cf-field-group {
+    display: flex;
+    gap: 15px;
+}
+
+.cf-field-group .cf-field-wrapper {
+    flex: 1;
+}
+.cf-field-wrapper legend {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--form-color-text-second);
+    font-size: 14px;
+}
+
+.cf-field-wrapper .cf-radio-option,
+.cf-field-wrapper .cf-checkbox-option {
+    margin-bottom: 8px;
+}
+
+.cf-field-wrapper .cf-radio-option input,
+.cf-field-wrapper .cf-checkbox-option input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+}
+.cf-field-wrapper .cf-radio-option input + label,
+.cf-field-wrapper .cf-checkbox-option input + label {
+    font-size: 16px;
+    color: var(--form-color-text);
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.cf-field-wrapper .cf-radio-option input + label:after,
+.cf-field-wrapper .cf-checkbox-option input + label:after,
+.cf-field-wrapper .cf-radio-option input + label:before,
+.cf-field-wrapper .cf-checkbox-option input + label:before {
+    content: '';
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+}
+.cf-field-wrapper .cf-radio-option input + label:before,
+.cf-field-wrapper .cf-checkbox-option input + label:before {
+    border: 1px solid var(--form-color-border);
+    margin-top: 3px;
+}
+.cf-field-wrapper .cf-radio-option input + label:after,
+.cf-field-wrapper .cf-checkbox-option input + label:after {
+    position: absolute;
+    top: 7px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--form-color-accent);
+    opacity: 0;
+    visibility: hidden;
+    border: 0;
+}
+.cf-field-wrapper .cf-radio-option input:checked + label:after,
+.cf-field-wrapper .cf-checkbox-option input:checked + label:after {
+    opacity: 1;
+    visibility: visible;
+}
+.cf-field-wrapper .cf-radio-option input:checked + label:before,
+.cf-field-wrapper .cf-checkbox-option input:checked + label:before {
+    border: 1px solid var(--form-color-accent);
+}
+.cf-field-wrapper .cf-radio-option input + label:after,
+.cf-field-wrapper .cf-radio-option input + label:before {
+    border-radius: 100%;
+}

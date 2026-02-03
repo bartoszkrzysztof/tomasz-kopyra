@@ -10,6 +10,7 @@
     --color-text-main: var(--color-text-main);
     --color-text-second: var(--color-text-second);
     --color-text-third: var(--color-text-third);
+    --color-border: var(--color-border);
 }
 
 @utility font-primary {

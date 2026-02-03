@@ -1,0 +1,53 @@
+.cf-form {
+    @apply flex flex-col gap-2;
+    .cf-field-wrapper {
+        @apply m-0 pb-0 pt-4;
+        &.cf-field-text, &.cf-field-textarea, &.cf-field-email, &.cf-field-number, &.cf-field-tel {
+            @apply relative;
+            label {
+                @apply absolute top-10 -translate-y-1/2 transition-all duration-300 pointer-events-none font-normal text-base text-white;
+                &.active {
+                    @apply top-0 translate-y-0 text-xs;
+                }
+                &.focus {
+                    @apply text-white;
+                }
+            }
+            input[type=text], input[type=email], input[type=number], input[type=tel], textarea {
+                @apply w-full border-0 border-b bg-transparent text-white placeholder-transparent h-12 p-0;
+            }
+            textarea {
+                @apply h-32 pt-8;
+            }
+        }
+        &.cf-field-textarea {
+            @apply mt-4 md:mt-0;
+            label {
+                @apply top-5;
+            }
+        }
+        .cf-radio-option, .cf-checkbox-option {
+            input + label {
+                @apply text-sm font-normal;
+                &:before {
+                    @apply mt-[2px] border-border;
+                }
+                &:after {
+                    content: '✓';
+                    @apply bg-transparent -top-[5px] left-[4px] text-[19px];
+                }
+            }
+            input:checked + label {
+                &:before {
+                    @apply border-border;
+                }
+            }
+        } 
+        &.cf-submit-wrapper {
+            @apply text-right;
+        }
+    }
+    .cf-form-messages {
+        @apply m-0 p-0;
+    }    
+}

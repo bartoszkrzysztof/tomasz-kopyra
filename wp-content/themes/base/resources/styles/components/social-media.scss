@@ -1,0 +1,7 @@
+.social-media {
+    @apply flex items-center justify-center gap-6;
+
+    .social-media-icon, .social-media-image {
+        @apply w-8 h-8 opacity-100 hover:opacity-60 transition-opacity duration-300;
+    }
+}
