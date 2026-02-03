@@ -45,7 +45,16 @@ Application::configure()
     ->withProviders([
         App\Providers\ThemeServiceProvider::class,
         App\Providers\BlockServiceProvider::class,
+        App\Providers\AssetServiceProvider::class,
     ])
     ->boot();
 
 require_once __DIR__ . '/inc/inc-bootstrap.php';
+
+add_filter('acorn/paths.base', function () {
+    return get_theme_file_path();
+});
+
+if (class_exists('\Roots\Acorn\Application')) {
+    putenv('ACORN_BASEPATH=' . get_template_directory());
+}

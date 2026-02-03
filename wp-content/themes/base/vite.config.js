@@ -35,7 +35,27 @@ export default defineConfig({
   ],
   build: {
     outDir: 'public/build',
-    manifest: 'manifest.json', 
+    manifest: 'manifest.json',
+    // Zapobieganie nadmiernej optymalizacji GSAP
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'gsap': ['gsap', 'gsap/ScrollTrigger']
+        }
+      }
+    },
+    // Minimalna optymalizacja dla lepszej kompatybilności
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: false, // Zachowaj console.log dla debugowania
+        pure_funcs: [] // Nie usuwaj żadnych funkcji
+      },
+      mangle: {
+        keep_classnames: true, // Zachowaj nazwy klas
+        keep_fnames: true // Zachowaj nazwy funkcji (ważne dla GSAP)
+      }
+    }
   },
   server: {
     host: '0.0.0.0',
