@@ -22,6 +22,7 @@ class ContactForm {
     public $shortcode;
     public $rest_api;
     public $mailer;
+    public $settings;
 
     private function __construct()
     {

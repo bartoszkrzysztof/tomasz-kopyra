@@ -22,7 +22,7 @@ return [
     ],
 
     'image_sizes' => [
-        // 'link-thumb' => [ 680, 370, true ],
+        'gallery-thumb' => [ 328, 'auto', false ],
     ],
     'hide_admin' => ['post', 'comment'],
     'roles_available' => [

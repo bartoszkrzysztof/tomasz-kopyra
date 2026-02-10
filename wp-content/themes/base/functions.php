@@ -17,6 +17,11 @@ if (file_exists($autoload)) {
     require_once $autoload;
 }
 
+/**
+ * global vars
+ */
+require_once get_theme_file_path('/config/global-vars.php');
+
 /*
 |--------------------------------------------------------------------------
 | Bootstrap Core

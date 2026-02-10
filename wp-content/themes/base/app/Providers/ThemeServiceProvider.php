@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Roots\Acorn\Sage\SageServiceProvider;
+use App\Ajax\GalleryLoader;
 
 class ThemeServiceProvider extends SageServiceProvider
 {
@@ -24,5 +25,8 @@ class ThemeServiceProvider extends SageServiceProvider
     public function boot()
     {
         parent::boot();
+        
+        // Register Ajax handlers
+        GalleryLoader::register();
     }
 }

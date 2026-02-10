@@ -1,5 +1,5 @@
 .button {
-    @apply inline-flex bg-transparent hover:bg-transparent py-2 px-2 w-auto border-0 items-center justify-end relative text-right font-normal text-base text-white border-t-4 border-accent rounded-[0px] transition-all duration-300;
+    @apply inline-flex bg-transparent hover:bg-transparent py-2 px-2 w-auto border-0 items-center justify-end relative text-right font-normal text-base text-white border-t-4 border-accent rounded-[0px] transition-all duration-300 cursor-pointer;
     min-width: 200px;
     svg {
         @apply ml-2 w-4 h-4 mt-[2px] transition-all duration-300;
@@ -8,6 +8,40 @@
         @apply pr-1;
         svg {
             @apply ml-4;
+        }
+    }
+}
+
+.button-loading {
+    @apply inline-flex bg-transparent items-center justify-center relative text-center font-normal text-base text-white rounded-[0px] cursor-pointer pb-6;
+    svg {
+        @apply ml-4 w-4 h-4 mt-[2px];
+        transition: margin 0.15s ease;
+    }
+    &:hover {
+        svg {
+            @apply ml-4 mt-[6px];
+        }
+    }
+    &:after {
+        @apply content-[''] absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[44px] h-[4px] bg-accent;
+    }
+
+    .loader {
+        @apply w-4 h-4 border-2 border-t-transparent border-white rounded-full animate-spin;
+    }
+}
+
+.button-framed {
+    @apply inline-flex bg-transparent items-center justify-center relative text-center font-normal text-base text-white !no-underline pl-8 pr-10 pt-3 pb-4 border-4 border-accent cursor-pointer;
+    transition: padding 0.3s ease;
+    svg {
+        @apply mr-4 ml-2 w-4 h-4 mt-[2px];
+        transition: margin 0.3s ease;
+    }
+    &:hover {
+        svg {
+            @apply mr-6 ml-0;
         }
     }
 }

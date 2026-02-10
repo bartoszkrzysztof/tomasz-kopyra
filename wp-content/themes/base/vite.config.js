@@ -18,6 +18,8 @@ export default defineConfig({
         'resources/scripts/app.js',
         'resources/styles/editor.css',
         'resources/scripts/editor.js',
+        'resources/scripts/gallery.js',
+        'resources/scripts/single-slider.js',
       ],
       refresh: true,
       buildDirectory: 'build/.vite',

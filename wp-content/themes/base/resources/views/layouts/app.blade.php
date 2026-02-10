@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Protest+Strike&display=swap" rel="stylesheet">
     @php(do_action('get_header'))
     @php(wp_head())
-    @vite(['resources/scripts/app.js'])
+    @vite($entryPointsJS)
   </head>
 
   <body @php(body_class())>
@@ -21,7 +21,7 @@
 
       @include('sections.header')
 
-      <main id="main" class="main">
+      <main id="main" class="main {{ $mainClasses }}">
         @yield('content')
       </main>
 
@@ -30,6 +30,6 @@
 
     @php(do_action('get_footer'))
     @php(wp_footer())
-    @vite(['resources/styles/app.css'])
+    @vite($entryPointsCSS)
   </body>
 </html>

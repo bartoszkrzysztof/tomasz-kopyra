@@ -18,4 +18,11 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug'   => 'theme-general-settings',
     ));
     
+    
+    // Dodaj podstronę lista obrazów
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Ustawienia listy',
+        'menu_title'    => 'Ustawienia listy',
+        'parent_slug'   => 'edit.php?post_type=paint',
+    ));
 }

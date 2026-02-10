@@ -1,5 +1,7 @@
 body {
+    overflow-x: hidden;
 }
+
 .container {
     @apply 
     px-4
@@ -9,4 +11,22 @@ body {
     md:max-w-[920px] mx-auto
     lg:max-w-[1210px] mx-auto
     2xl:max-w-[1440px] mx-auto;
+}
+.main {
+    @apply pt-[220px];
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.site-main {
+    &.-archive-paint {
+        @apply bg-[url('../images/page-backgrounds/background-paint.png')] bg-no-repeat max-xl:bg-size-[100%_auto] bg-position-[center_top_-20px];
+    }
+}
+
+.page-title {
+    @apply text-6xl font-normal text-center mb-8;
+}
+
+.wysiwyg-content {
+    @apply text-base font-normal leading-6 text-text-second;
 }
