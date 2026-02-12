@@ -55,7 +55,7 @@
     }
 }
 .lang-nav {
-    @apply absolute left-1/2 top-full mt-6 -translate-x-1/2 flex flex-col space-y-6 opacity-0 pointer-events-none transition-opacity duration-300 w-auto;
+    @apply absolute left-1/2 top-full pt-6 pb-4 -translate-x-1/2 flex flex-col space-y-6 opacity-0 pointer-events-none transition-opacity duration-300 w-auto px-4 bg-[var(--color-bg-main)];
     &.active {
         @apply opacity-100 pointer-events-auto;
     }
@@ -74,7 +74,7 @@
     }
 }
 .main-nav {
-    @apply fixed left-0 top-0 w-screen h-full bg-[var(--color-bg-main)] flex flex-col justify-center items-center space-y-8 opacity-0 pointer-events-none transition-opacity duration-300 pt-[90px] pb-[40px];
+    @apply fixed left-0 top-0 w-screen h-full bg-[var(--color-bg-main)] flex flex-col justify-center items-center space-y-8 opacity-0 pointer-events-none transition-opacity duration-300 pt-[90px] pb-[40px] z-40;
     overflow-x: auto;
     &.active {
         @apply opacity-100 pointer-events-auto;

@@ -36,3 +36,10 @@ export function reinitLucideIcons() {
 
 // Make it globally available
 window.reinitLucideIcons = reinitLucideIcons;
+
+// Dynamically load gallery popup script only when gallery block exists
+if (document.querySelector('.gallery-block')) {
+    import('./blocks/gallery-popup.js').catch(err => {
+        console.error('Failed to load gallery popup:', err);
+    });
+}

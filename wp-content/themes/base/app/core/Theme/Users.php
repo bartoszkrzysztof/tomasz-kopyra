@@ -42,7 +42,7 @@ class Users
 
             // If label is boolean false => hide/remove role
             if ($label === false) {
-                // Don't call remove_role (persistent). Only remove from runtime lists so role is hidden in admin.
+                remove_role($role);
                 unset($wp_roles->roles[$role], $wp_roles->role_names[$role]);
                 continue;
             }
@@ -57,7 +57,8 @@ class Users
         // Remove roles not present in the allowed list
         foreach (array_keys($wp_roles->roles) as $role) {
             if (!array_key_exists($role, $allowed)) {
-                // Only hide roles at runtime; avoid persistent deletion
+                // remove_role is persistent; only call if role exists
+                remove_role($role);
                 unset($wp_roles->roles[$role], $wp_roles->role_names[$role]);
             }
         }

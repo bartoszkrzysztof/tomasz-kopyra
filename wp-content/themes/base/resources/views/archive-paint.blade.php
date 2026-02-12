@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="page-title font-secondary">{{ $title }}</h1>
+        <h1 class="post-title mb-8 font-secondary">{{ $title }}</h1>
         <div class="wysiwyg-content page-headline">
             {!! apply_filters('the_content', $text) !!}
         </div>

@@ -24,7 +24,7 @@ return [
     'image_sizes' => [
         'gallery-thumb' => [ 328, 'auto', false ],
     ],
-    'hide_admin' => ['post', 'comment'],
+    'hide_admin' => ['comment'],
     'roles_available' => [
         'administrator' => 'Administrator',
         'editor' => 'Edytor',

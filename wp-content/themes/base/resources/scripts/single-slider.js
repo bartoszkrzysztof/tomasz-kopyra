@@ -17,26 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize thumbnails slider first
     const thumbsSlider = new Swiper('.single-slider-thumbnails', {
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 'auto',
         freeMode: true,
         watchSlidesProgress: true,
-        breakpoints: {
-            640: {
-                slidesPerView: 5,
-            },
-            768: {
-                slidesPerView: 6,
-            },
-            1024: {
-                slidesPerView: 8,
-            },
-        },
     });
 
     // Initialize main slider
     const mainSlider = new Swiper('.single-slider-main', {
         modules: [Navigation, Thumbs],
-        spaceBetween: 10,
         navigation: {
             nextEl: '.single-slider-next',
             prevEl: '.single-slider-prev',

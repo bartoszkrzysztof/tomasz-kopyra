@@ -1,0 +1,200 @@
+.gallery-block {
+    .gallery-grid {
+        @apply grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6;
+    }
+    .gallery-thumbnail {
+        @apply relative aspect-[1/0.75] overflow-hidden border-none bg-transparent cursor-pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+        &:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
+    }
+    .gallery-thumbnail__image {
+        @apply w-full h-full object-cover block;
+    }
+}
+
+.gallery-popup {
+    @apply fixed inset-0 z-[9999] opacity-0 invisible transition-opacity duration-300 ease-in-out overflow-hidden flex items-center justify-center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    &.is-open {
+        @apply opacity-100 visible;
+    }
+    .gallery-popup__overlay {
+        @apply absolute inset-0 bg-black/95 cursor-pointer w-full h-full;
+    }
+
+    .gallery-popup__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        z-index: 1;
+
+        @media (min-width: 768px) {
+            padding: 2rem;
+        }
+    }
+
+  .gallery-popup__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    @media (min-width: 768px) {
+      top: 2rem;
+      right: 2rem;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    &:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .gallery-popup__main {
+    flex: 1;
+    margin-bottom: 1rem;
+    
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .gallery-popup__image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .gallery-popup__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, opacity 0.3s ease;
+
+    @media (min-width: 768px) {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      @media (min-width: 768px) {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .gallery-popup__nav--prev {
+      left: 1rem;
+
+      @media (min-width: 768px) {
+        left: 2rem;
+      }
+    }
+
+    .gallery-popup__nav--next {
+      right: 1rem;
+
+      @media (min-width: 768px) {
+        right: 2rem;
+      }
+    }
+  }
+
+  .gallery-popup__thumbs {
+    height: 80px;
+    padding: 0 3rem;
+
+    @media (min-width: 768px) {
+      height: 100px;
+      padding: 0 5rem;
+    }
+
+    .swiper-slide {
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+      border-radius: 0.25rem;
+      overflow: hidden;
+
+      @media (min-width: 768px) {
+        width: 100px;
+        height: 100px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.swiper-slide-thumb-active {
+        opacity: 1;
+        box-shadow: 0 0 0 2px white;
+      }
+    }
+  }
+
+  .gallery-popup__thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}

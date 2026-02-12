@@ -12,21 +12,32 @@ body {
     lg:max-w-[1210px] mx-auto
     2xl:max-w-[1440px] mx-auto;
 }
+
+.container-post {
+    @apply 
+    px-4
+    sm:px-8
+    max-w-full mx-auto
+    sm:max-w-[670px] mx-auto
+    md:max-w-[860px] mx-auto
+    lg:max-w-[1100px] mx-auto
+    2xl:max-w-[1240px] mx-auto;
+}
+
+
 .main {
-    @apply pt-[220px];
+    @apply pt-[100px] md:pt-[120px] lg:pt-[220px];
     max-width: 100%;
     overflow-x: hidden;
 }
 .site-main {
     &.-archive-paint {
-        @apply bg-[url('../images/page-backgrounds/background-paint.png')] bg-no-repeat max-xl:bg-size-[100%_auto] bg-position-[center_top_-20px];
+        @apply bg-[url('../images/page-backgrounds/background-paint.png')] bg-no-repeat 
+        bg-size-[160%_auto] bg-position-[right_-20%_top_-20px]
+        md:bg-size-[auto] md:bg-position-[right_-40%_top_-20px];
     }
 }
 
-.page-title {
-    @apply text-6xl font-normal text-center mb-8;
-}
-
-.wysiwyg-content {
-    @apply text-base font-normal leading-6 text-text-second;
+.post-title {
+    @apply text-3xl md:text-5xl lg:text-6xl font-normal text-center;
 }

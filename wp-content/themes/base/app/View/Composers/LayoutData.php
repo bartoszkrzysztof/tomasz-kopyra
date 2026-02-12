@@ -24,7 +24,7 @@ class LayoutData extends Composer
         if (is_front_page()) {
             $classes[] = '-front';
         }
-        if (is_post_type_archive('paint')) {
+        if (is_post_type_archive('paint') || is_singular('paint')) {
             $classes[] = '-archive-paint';
         }
 

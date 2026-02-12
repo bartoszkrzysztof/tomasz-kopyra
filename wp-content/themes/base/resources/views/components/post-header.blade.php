@@ -1,0 +1,1 @@
+<h1 class="post-title font-secondary mb-8 md:mb-[48px] lg:mb-[72px]">{{ $title }}</h1>

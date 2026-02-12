@@ -245,7 +245,6 @@ class Helpers
         try {
             // Jeśli to callable (funkcja, closure)
             if (is_callable($callback)) {
-                error_log('callable');
                 $result = call_user_func($callback, $block);
                 return is_array($result) ? $result : $block;
             }
@@ -301,7 +300,6 @@ class Helpers
                 return;
             }
             
-            error_log("ACF callback is not callable: " . print_r($callback, true));
         } catch (\Exception $e) {
             error_log("ACF Block callback error: {$e->getMessage()}");
         }

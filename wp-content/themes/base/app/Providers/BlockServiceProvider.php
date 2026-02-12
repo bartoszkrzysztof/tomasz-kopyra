@@ -39,19 +39,20 @@ class BlockServiceProvider extends ServiceProvider
         $acfBlocks = config('acf-blocks');
         
         if (!$acfBlocks || !is_array($acfBlocks)) {
-            error_log('ACF blocks config not found or not an array');
+            // error_log('ACF blocks config not found or not an array');
             return;
         }
 
-        error_log('Registering ACF blocks: ' . print_r(array_keys($acfBlocks), true));
+        // error_log('Registering ACF blocks: ' . print_r(array_keys($acfBlocks), true));
 
         foreach ($acfBlocks as $blockName => $config) {
             if (!($config['enabled'] ?? false)) {
-                error_log("Block {$blockName} is disabled");
+                // error_log("Block {$blockName} is disabled");
+                // error_log("Block config for {$blockName}: " . print_r($config, true));
                 continue;
             }
 
-            error_log("Registering block: {$blockName}");
+            // error_log("Registering block: {$blockName}");
 
             // Rejestracja pól ACF
             if (!empty($config['fields'])) {
@@ -72,7 +73,7 @@ class BlockServiceProvider extends ServiceProvider
 
             // Rejestracja bloku
             acf_register_block_type($blockDefinition);
-            error_log("Block {$blockName} registered successfully");
+            // error_log("Block {$blockName} registered successfully");
         }
     }
 
