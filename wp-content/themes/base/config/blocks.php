@@ -31,6 +31,10 @@ return [
             'visible' => true,
             'callback' => null,
         ],
+        'acf/paneflow' => [
+            'visible' => true,
+            'callback' => null,
+        ],
     ],
     'acf_blocks_enabled' => true,
 ];

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- @include('test.testpage') -->
-     <div class="h-screen"></div>
-     <div class="h-screen"></div>
+    @while(have_posts()) @php(the_post())
+        <article @php(post_class())>
+            @include('components.post-content', ['content' => get_the_content()])
+        </article>
+    @endwhile
 @endsection

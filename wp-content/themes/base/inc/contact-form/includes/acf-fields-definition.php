@@ -13,9 +13,10 @@ if (!defined('ABSPATH')) {
 /**
  * Rejestracja pól ACF dla formularzy
  */
-if (function_exists('acf_add_local_field_group')) {
-    
-    acf_add_local_field_group([
+add_action('acf/init', function() {
+    if (function_exists('acf_add_local_field_group')) {
+        
+        acf_add_local_field_group([
         'key' => 'group_cf_form_fields',
         'title' => 'Pola formularza (ACF)',
         'fields' => [
@@ -297,4 +298,5 @@ if (function_exists('acf_add_local_field_group')) {
         'active' => true,
         'description' => '',
     ]);
-}
+    }
+});

@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Protest+Strike&display=swap" rel="stylesheet">
     @php(do_action('get_header'))
     @php(wp_head())
-    @vite($entryPointsJS)
+    @vite($entryPointsCSS)
   </head>
 
   <body @php(body_class())>
@@ -30,6 +30,6 @@
 
     @php(do_action('get_footer'))
     @php(wp_footer())
-    @vite($entryPointsCSS)
+    @vite($entryPointsJS)
   </body>
 </html>

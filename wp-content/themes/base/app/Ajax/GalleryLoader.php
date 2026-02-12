@@ -66,6 +66,7 @@ class GalleryLoader
      */
     private static function renderItems(array $items): string
     {
+        $html = '';
         foreach ($items as $item) {
             $imageId = $item['image_id'] ?? 0;
             

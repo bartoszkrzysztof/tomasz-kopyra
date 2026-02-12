@@ -11,6 +11,7 @@ const baseViewsReal = path.resolve(themeRoot, 'resources/views')
 const tp = (p) => normalizePath(p) 
 
 export default defineConfig({
+  base: '/wp-content/themes/base/public/build/',
   plugins: [
     laravel({
       input: [
@@ -22,7 +23,7 @@ export default defineConfig({
         'resources/scripts/single-slider.js',
       ],
       refresh: true,
-      buildDirectory: 'build/.vite',
+      buildDirectory: 'build',
     }),
 
     tailwind({

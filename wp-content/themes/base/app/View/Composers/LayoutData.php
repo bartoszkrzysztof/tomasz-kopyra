@@ -35,15 +35,15 @@ class LayoutData extends Composer
     public function entryPointsJS(): array
     {
         $entrypoints = [
-            'app' => 'resources/scripts/app.js',
+            'resources/scripts/app.js',
         ];
 
         // Add gallery.js only on paint archive
         if (is_post_type_archive('paint')) {
-            $entrypoints['gallery'] = 'resources/scripts/gallery.js';
+            $entrypoints[] = 'resources/scripts/gallery.js';
         }
         if (is_singular('paint')) {
-            $entrypoints['single-paint'] = 'resources/scripts/single-slider.js';
+            $entrypoints[] = 'resources/scripts/single-slider.js';
         }
 
         return $entrypoints;
@@ -52,7 +52,7 @@ class LayoutData extends Composer
     public function entryPointsCSS(): array
     {
         $entrypoints = [
-            'app' => 'resources/styles/app.css',
+            'resources/styles/app.css',
         ];
 
         return $entrypoints;
