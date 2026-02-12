@@ -25,11 +25,9 @@ class GalleryPopup {
         this.bindEvents();
     }
 
-    initSwipers() {
-        // Main swiper
-        const mainElement = this.popup.querySelector('.gallery-popup__main');
-        if (mainElement) {
-            this.mainSwiper = new Swiper(mainElement, {
+    initSwipers(targetSlider) {
+        if (targetSlider) {
+            this.mainSwiper = new Swiper(targetSlider, {
                 modules: [Navigation],
                 navigation: {
                     nextEl: this.popup.querySelector('.-next'),
@@ -48,7 +46,9 @@ class GalleryPopup {
 
             button.addEventListener('click', (e) => {
                 const slideIndex = parseInt(button.dataset.galleryOpen, 10);
-                this.openPopup(slideIndex);
+                const targetSliderId = button.dataset.target;
+                const targetSlider = document.querySelector(targetSliderId);
+                this.openPopup(slideIndex, targetSlider);
             });
         });
 
@@ -67,25 +67,17 @@ class GalleryPopup {
         });
     }
 
-    openPopup(slideIndex = 0) {
+    openPopup(slideIndex = 0, targetSlider = null) {
         this.popup.classList.add('is-open');
         document.body.style.overflow = 'hidden';
-        
-        // Wait for CSS transition and rendering
-        setTimeout(() => {
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                console.log('Initializing Swiper for gallery popup');
-                if (slideIndex) {
-                    console.log('Opening slide index:', slideIndex);
-                }
-                if (!this.swiperInitialized) {
-                    // this.initSwipers();
-                    this.swiperInitialized = true;
-                }
-            });
-        });
-        }, 300);
+
+        if (!this.swiperInitialized && targetSlider) {
+            this.initSwipers(targetSlider);
+            this.swiperInitialized = true;
+        }
+        if (this.mainSwiper) {
+            this.mainSwiper.slideTo(slideIndex, 0);
+        }
     }
 
     closePopup() {
