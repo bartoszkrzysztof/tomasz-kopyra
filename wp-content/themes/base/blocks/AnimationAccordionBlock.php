@@ -2,7 +2,7 @@
 
 namespace App\Blocks;
 
-class PaneFlowBlock
+class AnimationAccordionBlock
 {
     /**
      * Custom render callback dla bloku PaneFlow
@@ -18,17 +18,25 @@ class PaneFlowBlock
         // Skrypt ładowany dynamicznie w app.js gdy blok istnieje
         
         // Pobierz pola ACF
-        $slider_paneflow_id = get_field('slider_paneflow_id') ?: [];
+        $header = get_field('header') ?: '';
+        $main_content = get_field('main_content') ?: '';
+        $bg = get_field('main_image') ?: '';
+        $bg_position = get_field('main_image_position') ?: '';
+        $panels = get_field('panels') ?: [];
         
         $data = [
             'block' => $block,
             'is_preview' => $is_preview,
             'post_id' => $post_id,
-            'slider_paneflow_id' => $slider_paneflow_id,
+            'header' => $header,
+            'main_content' => $main_content,
+            'bg' => $bg,
+            'bg_position' => $bg_position,
+            'panels' => $panels,
         ];
 
         try {
-            echo \Roots\view('blocks.acf.paneflow', $data)->render();
+            echo \Roots\view('blocks.acf.animation_accordion', $data)->render();
         } catch (\Exception $e) {
             if ($is_preview) {
                 echo '<div style="padding: 20px; background: #f0f0f0; border: 1px solid #ccc;">';

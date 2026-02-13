@@ -1,13 +1,13 @@
 {
     "key": "group_698b33789955c",
-    "title": "Galeria",
+    "title": "Test",
     "fields": [
         {
-            "key": "field_698b337b2fb59",
-            "label": "Galeria",
-            "name": "gallery",
+            "key": "field_698ec928c6aa9",
+            "label": "Obrazy",
+            "name": "paints",
             "aria-label": "",
-            "type": "gallery",
+            "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,19 +16,23 @@
                 "class": "",
                 "id": ""
             },
+            "post_type": [
+                "paint"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
             "return_format": "id",
-            "library": "all",
             "min": "",
             "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "insert": "append",
-            "preview_size": "medium"
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -46,9 +50,9 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770732125
+    "modified": 1770980978
 }

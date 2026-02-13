@@ -1,58 +1,67 @@
 .wysiwyg-content {
     @apply text-base font-normal leading-6 text-text-second;
-
+    > * {
+        &:first-child {
+            @apply mt-0;
+        }
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-secondary mb-4 mt-4 text-white;
+    }
+    h1 {
+        @apply text-3xl md:text-4xl lg:text-5xl;
+    }
+    h2, h3 {
+        @apply text-2xl md:text-3xl lg:text-4xl;
+    }
+    h4 {
+        @apply text-xl md:text-2xl lg:text-3xl;
+    }
+    h5 {
+        @apply text-lg md:text-xl lg:text-2xl;
+    }
+    h6 {
+        @apply text-base md:text-lg lg:text-xl;
+    }
+    ul, ol {
+        li {
+            @apply relative;
+        }
+    }
+    ol {
+        @apply list-decimal list-inside;
+    }
+    ul {
+        li {
+            @apply pl-4;
+            &::before {
+                @apply content-[''] absolute left-0 top-[10px] w-1 h-1 rounded-full bg-text-second;
+            }
+        }
+    }
+    a {
+        @apply underline hover:text-white transition-colors duration-300;
+    }
+    blockquote {
+        @apply border-l-4 border-accent pl-4 italic text-text-second;
+    }
+    
     &.-paragraphed {
-        > * {
-            &:first-child {
-                @apply mt-0;
-            }
-            &:last-child {
-                @apply mb-0;
-            }
-        }
-        h1, h2, h3, h4, h5, h6 {
-            @apply font-secondary mb-4 mt-4 text-white;
-        }
-        h1 {
-            @apply text-3xl md:text-4xl lg:text-5xl;
-        }
-        h2, h3 {
-            @apply text-2xl md:text-3xl lg:text-4xl;
-        }
-        h4 {
-            @apply text-xl md:text-2xl lg:text-3xl;
-        }
-        h5 {
-            @apply text-lg md:text-xl lg:text-2xl;
-        }
-        h6 {
-            @apply text-base md:text-lg lg:text-xl;
-        }
+        
         p {
             @apply mb-4;
         }
         ul, ol {
             @apply mb-4;
             li {
-                @apply mb-2 relative;
+                @apply mb-2;
             }
-        }
-        ol {
-            @apply list-decimal list-inside;
-        }
-        ul {
-            li {
-                @apply pl-4;
-                &::before {
-                    @apply content-[''] absolute left-0 top-[10px] w-1 h-1 rounded-full bg-text-second;
-                }
-            }
-        }
-        a {
-            @apply underline hover:text-white transition-colors duration-300;
         }
         blockquote {
-            @apply border-l-4 border-accent pl-4 italic text-text-second mb-4;
+            @apply mb-4;
         }
     }
 }

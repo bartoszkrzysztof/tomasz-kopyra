@@ -1,14 +1,14 @@
 <?php 
 return [
     'enabled' => true,
-    'callback' => \App\Blocks\PaneFlowBlock::class,
+    'callback' => \App\Blocks\AnimationGalleryBlock::class,
     'block_definition' => [
-        'name' => 'paneflowblock',
-        'title' => 'PaneFlow',
+        'name' => 'animation-gallery',
+        'title' => 'Animacja - galeria',
         'description' => '',
         'category' => 'theme',
-        'icon' => 'format-gallery',
-        'keywords' => ['paneflow', 'content'],
+        'icon' => 'screenoptions',
+        'keywords' => ['animation', 'gallery', 'content'],
         'mode' => 'edit',
         'supports' => [
             'align' => false,
@@ -17,5 +17,5 @@ return [
             'jsx' => true,
         ],
     ],
-    'fields' => include_once __DIR__ . '/paneflow-block-fields.php',
+    'fields' => include_once __DIR__ . '/animation-gallery-fields.php',
 ];

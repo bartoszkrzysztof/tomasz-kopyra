@@ -1,14 +1,14 @@
 <?php 
 return [
     'enabled' => true,
-    'callback' => \App\Blocks\PaneFlowBlock::class,
+    'callback' => \App\Blocks\AnimationAccordionBlock::class,
     'block_definition' => [
-        'name' => 'paneflowblock',
-        'title' => 'PaneFlow',
+        'name' => 'animation-accordion',
+        'title' => 'Animacja - panele rozsuwane',
         'description' => '',
         'category' => 'theme',
-        'icon' => 'format-gallery',
-        'keywords' => ['paneflow', 'content'],
+        'icon' => 'move',
+        'keywords' => ['animation', 'accordion', 'content'],
         'mode' => 'edit',
         'supports' => [
             'align' => false,
@@ -17,5 +17,5 @@ return [
             'jsx' => true,
         ],
     ],
-    'fields' => include_once __DIR__ . '/paneflow-block-fields.php',
+    'fields' => include_once __DIR__ . '/animation-accordion-fields.php',
 ];

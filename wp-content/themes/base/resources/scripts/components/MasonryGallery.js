@@ -1,6 +1,10 @@
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Rejestracja pluginu ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * MasonryGallery - Klasa zarządzająca galerią typu masonry
@@ -48,7 +52,6 @@ export default class MasonryGallery {
    * @param {NodeList|Array} items - Elementy do animacji
    */
   animateItems(items) {
-        // Opcja 1: Scale + Opacity (delikatne powiększanie)
         gsap.fromTo(
             items,
             {
@@ -61,6 +64,12 @@ export default class MasonryGallery {
                 duration: 0.6,
                 stagger: 0.05,
                 ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: items[0]?.parentElement || this.grid,
+                    start: 'top 80%', // Animacja startuje gdy górna krawędź elementu jest na 80% wysokości viewport
+                    toggleActions: 'play none none none', // play przy wejściu, nic przy wyjściu/powrocie
+                    // markers: true, // Odkomentuj żeby zobaczyć markery debug
+                },
             }
         );
 

@@ -31,7 +31,19 @@ return [
             'visible' => true,
             'callback' => null,
         ],
-        'acf/paneflow' => [
+        'acf/paneflowblock' => [
+            'visible' => true,
+            'callback' => null,
+        ],
+        'acf/animation-double' => [
+            'visible' => true,
+            'callback' => null,
+        ],
+        'acf/animation-accordion' => [
+            'visible' => true,
+            'callback' => null,
+        ],
+        'acf/animation-gallery' => [
             'visible' => true,
             'callback' => null,
         ],

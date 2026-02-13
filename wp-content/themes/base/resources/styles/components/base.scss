@@ -1,7 +1,9 @@
-body {
+body, html {
     overflow-x: hidden;
 }
-
+* {
+    box-sizing: border-box;
+}
 .container {
     @apply 
     px-4
@@ -12,7 +14,21 @@ body {
     lg:max-w-[1210px] mx-auto
     2xl:max-w-[1440px] mx-auto;
 }
-
+.half-container {
+    @apply 
+    px-4
+    sm:px-8
+    max-w-full mx-auto
+    md:max-w-[430px] mx-auto
+    lg:max-w-[605px] mx-auto
+    2xl:max-w-[720px] mx-auto;
+    &.-left {
+        @apply md:mr-0 md:ml-auto;
+    }
+    &.-right {
+        @apply md:ml-0 md:mr-auto;
+    }
+}
 .container-post {
     @apply 
     px-4
@@ -36,8 +52,15 @@ body {
         bg-size-[160%_auto] bg-position-[right_-20%_top_-20px]
         md:bg-size-[auto] md:bg-position-[right_-40%_top_-20px];
     }
+    &.-front {
+        @apply pt-[73px] md:pt-[73px] lg:pt-[73px];
+    }
 }
 
 .post-title {
     @apply text-3xl md:text-5xl lg:text-6xl font-normal text-center;
+
+    &.-smaller {
+        @apply text-2xl md:text-4xl lg:text-5xl;
+    }
 }

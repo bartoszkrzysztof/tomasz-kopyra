@@ -34,7 +34,7 @@ export default function navToggler() {
 
     // Scroll hide/show animation
     let lastScrollTop = 0;
-    const scrollThreshold = 100; 
+    const scrollThreshold = 50; 
 
     const menu = document.getElementById('js-main-nav');
     const lang_menu = document.getElementById('js-lang-nav');

@@ -1,0 +1,42 @@
+.animation-double-block {
+    @apply !overflow-x-hidden;
+
+    .pin-spacer {
+        @apply !overflow-hidden;
+    }
+}
+.animation-double-block-wrapper {
+    @apply flex flex-col md:flex-row items-center h-screen relative overflow-x-hidden;
+
+    .animation-double-block-left, .animation-double-block-right {
+        @apply w-full md:w-1/2 h-screen flex items-center justify-center py-8 md:py-12 lg:py-16 box-border;
+
+        &.-blur {
+            @apply blur-sm opacity-0;
+        }
+        &.-opacity {
+            @apply opacity-0;
+        }
+        &.-scale {
+            @apply scale-75 opacity-0;
+        }
+        &.-fade_left {
+            @apply -translate-x-full opacity-0;
+        }
+        &.-fade_right {
+            @apply translate-x-full opacity-0;
+        }
+        &.-fade_bottom {
+            @apply translate-y-full opacity-0;
+        }
+        &.-fade_up {
+            @apply -translate-y-full opacity-0;
+        }
+    }
+}
+
+.double-section-image {
+    img {
+        @apply mx-auto max-sm:max-h-[calc(100vh/2-4rem)] max-sm:w-auto;
+    }
+}

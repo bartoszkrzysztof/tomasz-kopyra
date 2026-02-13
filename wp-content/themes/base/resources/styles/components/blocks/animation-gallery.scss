@@ -1,0 +1,45 @@
+.animation-gallery-block {
+    @apply relative overflow-hidden;
+}
+.animation-gallery-wrapper{
+    @apply flex flex-col md:flex-row gap-8 items-center relative;
+
+    .animation-gallery-empty-wrapper {
+        @apply hidden md:block w-[160px] ;
+    }
+    .animation-gallery-items {
+        @apply flex-1;
+    }
+    .animation-gallery-link-wrapper  {
+        @apply hidden md:block w-[160px] relative;
+        &:before {
+            @apply content-[''] block md:w-[4px] md:h-[300px] bg-accent absolute left-0 top-1/2 -translate-y-1/2;
+        }
+    }
+}
+
+.gallery-link {
+    @apply flex items-center md:text-right md:justify-end gap-2 !no-underline md:pl-4;
+    svg {
+        @apply w-5 h-5 pt-1;
+        transition: all 0.3s ease;
+    }
+    &:hover {
+        svg {
+            @apply translate-x-1;
+        }
+    }
+}
+
+.animation-bg {
+    @apply absolute top-0 left-0 w-full h-full z-0 text-center;
+    img {
+        @apply w-auto h-full object-contain max-h-screen ml-0 mr-auto;
+    }
+    &.top_right {
+        @apply left-auto mr-0 ml-auto;
+        img {
+            @apply ml-auto mr-0;
+        }
+    }
+}
